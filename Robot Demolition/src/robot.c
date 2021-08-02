@@ -15,8 +15,6 @@ int main() {
 	// The 10 by 10 grid
 	gridSquare grid[10][10];
 
-	// TODO: initialize the grid using a nested loop so there are no robots
-
 	int i;
 	int row, column;
 
@@ -35,8 +33,8 @@ int main() {
 			column = rand() % 10;
 		} while (grid[row][column].hasRobot);
 
-		// TODO:  Randomly set the heading at (column,row),
-		//        and make the robot alive
+		// Randomly set the heading at (column,row),
+		// and make the robot alive
 		grid[row][column].hasRobot=1;
 		grid[row][column].robAlive=1;
 		grid[row][column].robHeading=rand()%4;
@@ -48,7 +46,7 @@ int main() {
 	// main loop of the game
 	do {
 
-		// TODO: Output the grid
+		// Output the grid
 		int count=0;
 		for(row=0;row<10;row++){
 				for(column=0;column<10;column++){
@@ -78,8 +76,6 @@ int main() {
 
 			if (cmd == 'L') {
 
-				// TODO: Update the heading accordingly
-
 				if(grid[row][column].robHeading==0){
 					grid[row][column].robHeading=3;
 				}else{
@@ -88,7 +84,6 @@ int main() {
 
 			} else if (cmd == 'R') {
 
-				// TODO: Update the heading accordingly
 				if(grid[row][column].robHeading==3){
 					grid[row][column].robHeading=0;
 				}else{
@@ -103,7 +98,7 @@ int main() {
 
 					case 0: // Pointing west
 						if (column > 0) {
-							// TODO: If a robot is in front of you, crash both;
+							// If a robot is in front of you, crash both;
 							// otherwise move the robot forward
 							if(grid[row][column-1].hasRobot==1 && grid[row][column-1].robAlive==1){
 								grid[row][column].robAlive=0;
@@ -125,7 +120,7 @@ int main() {
 
 					case 1: // Pointing north
 						if (row > 0) {
-							// TODO: If a robot is in front of you, crash both;
+							// If a robot is in front of you, crash both;
 							// otherwise move the robot forward
 							if(grid[row-1][column].hasRobot==1 && grid[row-1][column].robAlive==1){
 								grid[row][column].robAlive=0;
@@ -146,7 +141,7 @@ int main() {
 
 					case 2: // Pointing east
 						if (column < 9) {
-							// TODO: If a robot is in front of you, crash both;
+							// If a robot is in front of you, crash both;
 							// otherwise move the robot forward
 							if(grid[row][column+1].hasRobot==1 && grid[row][column+1].robAlive==1){
 								grid[row][column].robAlive=0;
@@ -167,7 +162,7 @@ int main() {
 
 					case 3: // Pointing south
 						if (row < 9) {
-							// TODO: If a robot is in front of you, crash both;
+							// If a robot is in front of you, crash both;
 							// otherwise move the robot forward
 							if(grid[row+1][column].hasRobot==1 && grid[row+1][column].robAlive==1){
 								grid[row+1][column].robAlive=0;
