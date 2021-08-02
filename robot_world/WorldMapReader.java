@@ -63,10 +63,10 @@ public class WorldMapReader {
 
 		reader.close();
 
-		// Now, initialize the map to the proper dimensions
+		// initialize the map to the proper dimensions
 		char[][] worldMap = new char[maxRows][maxColumns];
 
-		// Now, create a new reader, and store the proper chars to the
+		// create a new reader, and store the proper chars to the
 		// character array
 
 		reader = new BufferedReader(new FileReader(mapFile));
