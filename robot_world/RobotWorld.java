@@ -58,8 +58,7 @@ public class RobotWorld {
      * 90 degrees
      */
     public void rotateClockwise() {
-        
-        // TODO: Fix me!!!  this now only works if the robot was facing north :)
+      	
         if(worldMap[robotRow][robotColumn] == NORTH ) {
         	worldMap[robotRow][robotColumn] = EAST; 
         }else if(worldMap[robotRow][robotColumn] ==EAST ) {
@@ -80,7 +79,6 @@ public class RobotWorld {
      */
     public void rotateCounterClockwise() {
         
-        // TODO: Fix me!!!  this now only works if the robot was facing south :)
     	if(worldMap[robotRow][robotColumn] == NORTH ) {
         	worldMap[robotRow][robotColumn] = WEST; 
         }else if(worldMap[robotRow][robotColumn] ==EAST ) {
@@ -101,12 +99,7 @@ public class RobotWorld {
      * Also outputs a message if the robot finds the goal
      */
     public void moveForward() throws Exception {
-        
-        // TODO: Fix this so that the worldMap, robotRow, and robotColumn
-    	// are updated appropriately
     	
-    	// If the robot lands on the goal, then output the message SUCCESS!
-    	// In this case, the goal will no longer be on the world map
     	if(worldMap[robotRow][robotColumn] == NORTH ) {
     		if(worldMap[robotRow-1][robotColumn]==WALL) {
         		throw new Exception("WALL!");
