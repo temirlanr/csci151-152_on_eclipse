@@ -6,8 +6,6 @@ import java.io.IOException;
 import proj.impl.LinkedListStack;
 
 public class SuperRobotWorld extends RobotWorld {
-
-	// TODO: Add some fields to keep track of commands
 	
 	LinkedListStack<String> undoneCommands=new LinkedListStack<String>();
 	
@@ -21,7 +19,6 @@ public class SuperRobotWorld extends RobotWorld {
      * do nothing.
      */
     public void undoCommand() {
-        // TODO: Fix me
     	
     	if(getCommands().getSize()!=0) {
     		String last=null;
@@ -74,7 +71,7 @@ public class SuperRobotWorld extends RobotWorld {
      * @param n the number of commands to undo
      */
     public void undoCommands(int n) {
-    	// TODO:  Three lines of code, if you use undoCommand
+    	
     	if(n>0) {
     		for(int i=0;i<n;i++) {
     			undoCommand();
@@ -87,7 +84,7 @@ public class SuperRobotWorld extends RobotWorld {
      * undone
      */
     public void redoUndoneCommand() {
-        // TODO: Fix me!!!
+       	
     	if(undoneCommands.getSize()!=0) {
     		String last=null;
     		try {
@@ -126,7 +123,7 @@ public class SuperRobotWorld extends RobotWorld {
      * @param n the number of commands to redo
      */
     public void redoUndoneCommands(int n) {
-    	// TODO:  Also three lines of code
+    	
     	if(n>0) {
     		for(int i=0;i<n;i++) {
     			redoUndoneCommand();
